@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "16022607506",
+    "project_id": "nutritiontracker-8fd01",
+    "storage_bucket": "nutritiontracker-8fd01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16022607506:android:f955b54ce7989667eb784b",
+        "android_client_info": {
+          "package_name": "com.example.nutritiontracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSsrthfQWTk49_OxNLuEcs8LslmQOc9tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

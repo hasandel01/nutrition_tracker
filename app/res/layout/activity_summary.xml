@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Summary">
+
+    <TextView
+        android:id="@+id/dailyIntake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recommended daily calories: "
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/orange"
+
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            android:background="@color/orange"
+            android:padding="5dp"
+            android:onClick="previousDayAction"
+            android:contentDescription="@string/go_back"/>
+
+        <TextView
+            android:id="@+id/monthDayText"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="40dp"
+            android:text="1 Jan 2024"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_arrow_circle_right_24"
+            android:background="@color/orange"
+            android:padding="5dp"
+            android:onClick="nextDayAction"
+            android:contentDescription="@string/go_forward"
+            />
+
+    </LinearLayout>
+
+
+
+    <ListView
+        android:id="@+id/dailyList"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        ></ListView>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_settings_suggest_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="@string/settings"
+            android:onClick="editUserInfo"/>
+
+        <ImageView
+            android:id="@+id/summary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_space_dashboard_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="@string/settings"
+            android:onClick="summaryAction"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_photo_camera_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="@string/open_the_camera"
+            android:onClick="cameraAction"/>
+
+        <ImageView
+            android:id="@+id/log_out"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_sensor_door_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:contentDescription="@string/log_out"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
