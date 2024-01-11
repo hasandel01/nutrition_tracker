@@ -30,5 +30,67 @@
         </LinearLayout>
     </ScrollView>
 
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Your other views go here -->
+
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="@color/orange"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/settings"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_settings_suggest_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:contentDescription="@string/settings"
+                android:onClick="editUserInfo"/>
+
+            <ImageView
+                android:id="@+id/summary"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_space_dashboard_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:contentDescription="@string/settings"
+                android:onClick="summaryAction"/>
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_photo_camera_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:contentDescription="@string/open_the_camera"
+                android:onClick="cameraAction"/>
+
+            <ImageView
+                android:id="@+id/log_out"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_sensor_door_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="16dp"
+                android:contentDescription="@string/log_out"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </RelativeLayout>

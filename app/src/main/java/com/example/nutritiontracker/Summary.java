@@ -61,7 +61,10 @@ public class Summary extends AppCompatActivity {
 
     private double totalCaloriesX = 0.0;
 
-    private ImageView exlamationMark;
+    private ImageView exclamationMark;
+
+    ImageView camera;
+
 
     @Override
     public void onStart() {
@@ -121,9 +124,10 @@ public class Summary extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButton);
         nextButton.setVisibility(View.GONE); // Set initial visibility to GONE
         totalCalories = findViewById(R.id.totalDailyCalories);
-        exlamationMark = findViewById(R.id.exclamationMark);
-
-        exlamationMark.setOnClickListener(new View.OnClickListener() {
+        exclamationMark = findViewById(R.id.exclamationMark);
+        exclamationMark.setVisibility(View.GONE);
+        camera = findViewById(R.id.camera);
+        exclamationMark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Show a message when the user taps on the image
@@ -143,8 +147,6 @@ public class Summary extends AppCompatActivity {
                         dailyCalorieIntake = userProfile.getDailyCalorieIntake();
                         dailyIntakeMaintain.setText("To maintain your weight: " + dailyCalorieIntake);
                         dailyIntakeWeightLoss.setText("To lose weight healthily: " + (dailyCalorieIntake - 500));
-
-
                     }
                 } else {
                     // Handle if user profile doesn't exist
@@ -364,12 +366,12 @@ public class Summary extends AppCompatActivity {
 
     private void updateVisibility() {
 
-        if (totalCaloriesX < dailyCalorieIntake) {
+        if (totalCaloriesX > dailyCalorieIntake) {
             // Disable the "next" button
-            exlamationMark.setVisibility(View.GONE);
+            exclamationMark.setVisibility(View.VISIBLE);
         } else {
             // Enable the "next" button
-            exlamationMark.setVisibility(View.VISIBLE);
+            exclamationMark.setVisibility(View.GONE);
         }
     }
 }

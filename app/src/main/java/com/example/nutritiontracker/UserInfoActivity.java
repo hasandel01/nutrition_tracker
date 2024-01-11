@@ -1,5 +1,6 @@
 package com.example.nutritiontracker;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -21,6 +23,8 @@ public class UserInfoActivity extends AppCompatActivity {
     RadioGroup radioGroupGender;
     Button buttonSubmit;
 
+    ImageView camera;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,7 @@ public class UserInfoActivity extends AppCompatActivity {
         editTextAge = findViewById(R.id.editTextAge);
         radioGroupGender = findViewById(R.id.radioGroupGender);
         buttonSubmit = findViewById(R.id.buttonSubmit);
+        camera = findViewById(R.id.camera);
 
         SeekBar activitySeekBar = findViewById(R.id.activitySeekBar);
         TextView activityLevelTextView = findViewById(R.id.activityLevelTextView);

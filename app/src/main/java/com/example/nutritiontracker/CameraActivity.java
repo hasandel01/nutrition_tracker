@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -86,6 +87,9 @@ public class CameraActivity extends AppCompatActivity {
     private static ApiNinjasAPI nutritionixAPI;
     private static final String BASE_URL = "https://api.api-ninjas.com/";
 
+    ImageView log_out;
+
+    ImageView camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +97,8 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        log_out = findViewById(R.id.log_out);
+        camera = findViewById(R.id.camera);
         // Create Retrofit instance
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -103,8 +108,8 @@ public class CameraActivity extends AppCompatActivity {
         // Create ApiService instance
         nutritionixAPI = retrofit.create(ApiNinjasAPI.class);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
+        // Find the Button and set its onClickListener
+        camera.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(CameraActivity.this);
             builder
                     .setMessage(R.string.dialog_select_prompt)
@@ -115,6 +120,16 @@ public class CameraActivity extends AppCompatActivity {
 
         mMainImage = findViewById(R.id.main_image);
         listView = findViewById(R.id.foodListView);
+
+        log_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void startGalleryChooser() {
@@ -575,7 +590,23 @@ public class CameraActivity extends AppCompatActivity {
         return resultBitmap;
     }
 
+    public void cameraAction(View view) {
+        Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
+    public void editUserInfo(View view) {
+        Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void summaryAction(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summary.class);
+        startActivity(intent);
+        finish();
+    }
 
 
 }
